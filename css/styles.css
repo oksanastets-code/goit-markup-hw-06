@@ -379,9 +379,6 @@ header {
 .client-icon {
   fill: currentColor;
 }
-.client-icon:hover {
-  fill: var(--accent-color);
-}
 
 /* Портфолио */
 /* Фильтр */
@@ -504,6 +501,7 @@ footer {
 .footer {
   display: flex;
   align-items: baseline;
+  justify-content: space-between;
 }
 .main-contacts {
   width: 231px;
@@ -537,6 +535,7 @@ footer {
 }
 .social-networks-contacts {
   width: 206px;
+  margin-right: 93px;
 }
 .call {
   margin-bottom: 20px;
@@ -558,6 +557,44 @@ footer {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/* Subscribe form */
+
+.subscribe-form {
+  width: 570px;
+}
+.subscribe-form.call {
+  margin-bottom: 20px;
+}
+.subscribe-field {
+  display: flex;
+}
+.form-input-subscribe {
+  margin-right: 12px;
+  padding: 15px 16px;
+  width: 358px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  background-color: transparent;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.form-input-subscribe::placeholder {
+  font-size: 16px;
+  line-height: 1.25;
+  letter-spacing: 0.03em;
+  color: var(--secondary-white-color);
+}
+.subscribe-field > button {
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
+}
+.button-text.subscribe {
+  padding-left: 29px;
+  padding-right: 28px;
+}
+.subscribe-icon {
+  margin-left: 10px;
+}
 /* Модальне вікно */
 .backdrop {
   position: fixed;
@@ -637,7 +674,9 @@ footer {
   margin-bottom: 10px;
   width: 448px;
 }
+
 .form-label {
+  position: relative;
   margin-bottom: 4px;
   font-size: 12px;
   line-height: 1.17;
@@ -646,10 +685,28 @@ footer {
   color: var(--secondary-text-color);
 }
 .form-input {
-  padding: 11px 12px;
+  padding: 11px 42px;
   border: 1px solid var(--border-form-input);
   border-radius: 4px;
 }
+/* .form-field-icon:hover,
+.form-input:hover {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+} */
+/* Иконки модального окна */
+
+.form-field-icon {
+  position: absolute;
+  top: 30px;
+  left: 12px;
+  fill: var(--primary-text-color);
+  /* transform: translateY(100%); */
+}
+.form-field-icon {
+  /* fill: currentColor; */
+}
+
 textarea.form-input {
   display: block;
   resize: none;
@@ -664,7 +721,7 @@ textarea::placeholder {
   letter-spacing: 0.01em;
   color: rgba(117, 117, 117, 0.5);
 }
-form > button {
+.modal-form > button {
   display: block;
   margin-left: auto;
   margin-right: auto;
