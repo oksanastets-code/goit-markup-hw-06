@@ -577,6 +577,9 @@ footer {
   background-color: transparent;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
+.form-input-subscribe {
+  color: var(--main-white-color);
+}
 .form-input-subscribe::placeholder {
   font-size: 16px;
   line-height: 1.25;
@@ -654,10 +657,14 @@ footer {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.button-close:focus-within,
+.button-close:focus,
 .button-close:hover {
   cursor: pointer;
   color: var(--accent-color);
+}
+.button-close:focus {
+  outline: none;
+  box-shadow: 0 0 0 0.1em var(--accent-color);
 }
 .close {
   fill: currentColor;
@@ -713,7 +720,6 @@ footer {
   top: 30px;
   left: 12px;
   fill: var(--primary-text-color);
-  /* transform: translateY(100%); */
 }
 /* Поле комментария */
 
@@ -749,14 +755,20 @@ textarea::placeholder {
   overflow: hidden;
 }
 .checkbox-icon {
+  width: 16px;
+  height: 15px;
   margin-right: 7px;
+  cursor: pointer;
 }
+
 .checkbox:checked + .checkbox-icon {
   background-image: url('../images/check.svg');
+  fill: transparent;
 }
-.checkbox:unchecked + .checkbox-icon {
-  background-image: url('../images/uncheck.svg');
+.checkbox:focus-within + .checkbox-icon {
+  box-shadow: 0 0 0 1px var(--accent-color);
 }
+
 .agreement-text,
 .agreement-link {
   display: inline-block;
@@ -769,7 +781,6 @@ textarea::placeholder {
   color: var(--accent-color);
   text-decoration-line: underline;
 }
-
 /* Кнопка модального окна */
 
 .modal-form > button {
